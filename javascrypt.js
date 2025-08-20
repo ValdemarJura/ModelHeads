@@ -1,3 +1,25 @@
+// Функціонал слайдера для hero секції
+function initHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    // Запускаємо автоматичну зміну слайдів кожні 5 секунд
+    setInterval(nextSlide, 5000);
+}
+
+// Ініціалізуємо слайдер при завантаженні сторінки
+document.addEventListener('DOMContentLoaded', initHeroSlider);
+
 // Отримуємо елементи DOM
 const cartIcon = document.getElementById('cartIcon');
 const cartSidebar = document.getElementById('cartSidebar');

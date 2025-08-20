@@ -96,9 +96,7 @@ main {
 
 /* Hero section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
+    position: relative;
     height: 85vh;
     display: flex;
     align-items: center;
@@ -106,6 +104,37 @@ main {
     color: white;
     padding: 2rem 0;
     margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
@@ -381,6 +410,129 @@ main {
     background-color: #A0522D;
 }
 
+/* Button styles */
+.text-center {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.view-all-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.view-all-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -2;
+    transition: all 0.3s ease;
+}
+
+.view-all-button:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.view-all-button:hover::after {
+    height: 100%;
+    background-color: white;
+}
+
+.learn-more-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background-color: var(--military-green);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--military-green);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.learn-more-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -2;
+    transition: all 0.3s ease;
+}
+
+.learn-more-button:hover {
+    color: var(--military-green);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.learn-more-button:hover::after {
+    height: 100%;
+    background-color: white;
+}
+
+/* Add icons to buttons */
+.view-all-button::before {
+    content: '\f061';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+}
+
+.view-all-button:hover::before {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.learn-more-button::before {
+    content: '\f054';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+}
+
+.learn-more-button:hover::before {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
 /* Responsive design for new sections */
 @media (max-width: 768px) {
     .hero-buttons {
@@ -393,6 +545,12 @@ main {
 
     .newsletter-form {
         flex-direction: column;
+    }
+
+    .view-all-button,
+    .learn-more-button {
+        min-width: 100%;
+        margin: 10px 0;
     }
 }
 
