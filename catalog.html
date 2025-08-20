@@ -44,26 +44,80 @@
 
     <main class="catalog-page">
         <div class="container">
-            <h1>Каталог моделей</h1>
-            
-            <div class="filters">
-                <select class="filter-select">
-                    <option value="">Всі категорії</option>
-                    <option value="tanks">Танки</option>
-                    <option value="aircraft">Літаки</option>
-                    <option value="helicopters">Гелікоптери</option>
-                    <option value="ships">Кораблі</option>
-                </select>
+            <aside class="filters-sidebar">
+                <h3>Фільтри</h3>
                 
-                <select class="filter-select">
-                    <option value="">Сортувати за</option>
-                    <option value="price-low">Ціна (від низької до високої)</option>
-                    <option value="price-high">Ціна (від високої до низької)</option>
-                    <option value="popular">Популярністю</option>
-                </select>
-            </div>
+                <div class="filter-group">
+                    <h4>Категорії</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="tanks">
+                            Танки
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="aircraft">
+                            Літаки
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="helicopters">
+                            Гелікоптери
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="ships">
+                            Кораблі
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h4>Масштаб</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="scale" value="1-32">
+                            1:32
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="scale" value="1-48">
+                            1:48
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="scale" value="1-72">
+                            1:72
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h4>Ціна</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="price" value="0-1000">
+                            До 1000 грн
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="price" value="1000-2000">
+                            1000-2000 грн
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="price" value="2000+">
+                            Більше 2000 грн
+                        </label>
+                    </div>
+                </div>
+            </aside>
 
-            <div class="products-grid">
+            <div class="catalog-content">
+                <div class="catalog-header">
+                    <h1>Каталог моделей</h1>
+                    <select class="sort-select">
+                        <option value="">Сортувати за</option>
+                        <option value="price-low">Ціна (від низької до високої)</option>
+                        <option value="price-high">Ціна (від високої до низької)</option>
+                        <option value="popular">Популярністю</option>
+                    </select>
+                </div>
+
+                <div class="products-grid">
                 <!-- Танки -->
                 <div class="product-card">
                     <img src="images/tank1.jpg" alt="Танк T-72">
