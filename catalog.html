@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - ModelHeads</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">ModelHeads</a>
+                <ul class="nav-list">
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="catalog.html" class="active">Каталог</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li>
+                        <a href="#" class="cart-icon" id="cartIcon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Кошик</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Товари в кошику будуть тут -->
+        </div>
+        <div class="cart-total">
+            <span>Всього:</span>
+            <span id="cartTotal">0 грн</span>
+        </div>
+        <button class="checkout-btn">Оформити замовлення</button>
+    </div>
+
+    <main class="catalog-page">
+        <div class="container">
+            <h1>Каталог моделей</h1>
+            
+            <div class="filters">
+                <select class="filter-select">
+                    <option value="">Всі категорії</option>
+                    <option value="tanks">Танки</option>
+                    <option value="aircraft">Літаки</option>
+                    <option value="helicopters">Гелікоптери</option>
+                    <option value="ships">Кораблі</option>
+                </select>
+                
+                <select class="filter-select">
+                    <option value="">Сортувати за</option>
+                    <option value="price-low">Ціна (від низької до високої)</option>
+                    <option value="price-high">Ціна (від високої до низької)</option>
+                    <option value="popular">Популярністю</option>
+                </select>
+            </div>
+
+            <div class="products-grid">
+                <!-- Танки -->
+                <div class="product-card">
+                    <img src="images/tank1.jpg" alt="Танк T-72">
+                    <h3>Танк T-72</h3>
+                    <p class="price">1499 грн</p>
+                    <button class="add-to-cart" data-id="1" data-name="Танк T-72" data-price="1499">
+                        Додати в кошик
+                    </button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/tank2.jpg" alt="Танк Leopard 2">
+                    <h3>Танк Leopard 2</h3>
+                    <p class="price">1799 грн</p>
+                    <button class="add-to-cart" data-id="4" data-name="Танк Leopard 2" data-price="1799">
+                        Додати в кошик
+                    </button>
+                </div>
+
+                <!-- Літаки -->
+                <div class="product-card">
+                    <img src="images/plane1.jpg" alt="Літак МіГ-29">
+                    <h3>Літак МіГ-29</h3>
+                    <p class="price">1899 грн</p>
+                    <button class="add-to-cart" data-id="2" data-name="Літак МіГ-29" data-price="1899">
+                        Додати в кошик
+                    </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/plane2.jpg" alt="Літак F-16">
+                    <h3>Літак F-16</h3>
+                    <p class="price">2099 грн</p>
+                    <button class="add-to-cart" data-id="5" data-name="Літак F-16" data-price="2099">
+                        Додати в кошик
+                    </button>
+                </div>
+
+                <!-- Гелікоптери -->
+                <div class="product-card">
+                    <img src="images/heli1.jpg" alt="Гелікоптер Мі-24">
+                    <h3>Гелікоптер Мі-24</h3>
+                    <p class="price">1699 грн</p>
+                    <button class="add-to-cart" data-id="3" data-name="Гелікоптер Мі-24" data-price="1699">
+                        Додати в кошик
+                    </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/heli2.jpg" alt="Гелікоптер Apache">
+                    <h3>Гелікоптер Apache</h3>
+                    <p class="price">1999 грн</p>
+                    <button class="add-to-cart" data-id="6" data-name="Гелікоптер Apache" data-price="1999">
+                        Додати в кошик
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Контакти</h4>
+                    <p>Телефон: +380 99 123 45 67</p>
+                    <p>Email: info@modelheads.ua</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Соціальні мережі</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ModelHeads. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="javascrypt.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про нас - ModelHeads</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">ModelHeads</a>
+                <ul class="nav-list">
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html" class="active">Про нас</a></li>
+                    <li>
+                        <a href="#" class="cart-icon" id="cartIcon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Кошик</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Товари в кошику будуть тут -->
+        </div>
+        <div class="cart-total">
+            <span>Всього:</span>
+            <span id="cartTotal">0 грн</span>
+        </div>
+        <button class="checkout-btn">Оформити замовлення</button>
+    </div>
+
+    <main class="about-page">
+        <div class="container">
+            <section class="about-hero">
+                <h1>Про нас</h1>
+                <p>ModelHeads - ваш надійний партнер у світі масштабних моделей військової техніки</p>
+            </section>
+
+            <section class="about-content">
+                <div class="about-section">
+                    <h2>Наша місія</h2>
+                    <p>Ми прагнемо надати нашим клієнтам найкращі моделі військової техніки та забезпечити їх всім необхідним для створення унікальних колекцій. Наша мета - зробити хобі моделювання доступним та захоплюючим для кожного.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2>Чому обирають нас</h2>
+                    <div class="features-grid">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Якість</h3>
+                            <p>Ми співпрацюємо тільки з перевіреними виробниками моделей</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <h3>Доставка</h3>
+                            <p>Швидка доставка по всій Україні</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-comments"></i>
+                            <h3>Підтримка</h3>
+                            <p>Професійні консультації та допомога у виборі</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-percent"></i>
+                            <h3>Програма лояльності</h3>
+                            <p>Регулярні акції та знижки для постійних клієнтів</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2>Наша команда</h2>
+                    <p>Ми - команда ентузіастів, які захоплюються моделюванням та військовою технікою. Наш досвід та знання допоможуть вам зробити правильний вибір та отримати максимальне задоволення від хобі.</p>
+                </div>
+
+                <div class="contact-section">
+                    <h2>Контакти</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>м. Київ, вул. Хрещатик, 1</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+380 99 123 45 67</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@modelheads.ua</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Контакти</h4>
+                    <p>Телефон: +380 99 123 45 67</p>
+                    <p>Email: info@modelheads.ua</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Соціальні мережі</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ModelHeads. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="javascrypt.js"></script>
+</body>
+</html>

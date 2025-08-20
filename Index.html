@@ -1,11 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ModelHeads - Моделі військової техніки</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">ModelHeads</a>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Головна</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li>
+                        <a href="#" class="cart-icon" id="cartIcon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Кошик</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Товари в кошику будуть тут -->
+        </div>
+        <div class="cart-total">
+            <span>Всього:</span>
+            <span id="cartTotal">0 грн</span>
+        </div>
+        <button class="checkout-btn">Оформити замовлення</button>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Моделі військової техніки</h1>
+                <p>Збирайте легендарні моделі військової техніки різних епох</p>
+                <a href="catalog.html" class="cta-button">Перейти до каталогу</a>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <div class="container">
+                <h2>Популярні моделі</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/tank1.jpg" alt="Танк T-72">
+                        <h3>Танк T-72</h3>
+                        <p class="price">1499 грн</p>
+                        <button class="add-to-cart" data-id="1" data-name="Танк T-72" data-price="1499">
+                            Додати в кошик
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/plane1.jpg" alt="Літак МіГ-29">
+                        <h3>Літак МіГ-29</h3>
+                        <p class="price">1899 грн</p>
+                        <button class="add-to-cart" data-id="2" data-name="Літак МіГ-29" data-price="1899">
+                            Додати в кошик
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/heli1.jpg" alt="Гелікоптер Мі-24">
+                        <h3>Гелікоптер Мі-24</h3>
+                        <p class="price">1699 грн</p>
+                        <button class="add-to-cart" data-id="3" data-name="Гелікоптер Мі-24" data-price="1699">
+                            Додати в кошик
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Контакти</h4>
+                    <p>Телефон: +380 99 123 45 67</p>
+                    <p>Email: info@modelheads.ua</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Соціальні мережі</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ModelHeads. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="javascrypt.js"></script>
 </body>
 </html>
