@@ -409,3 +409,64 @@ window.addEventListener('scroll', () => {
 
     lastScroll = currentScroll;
 });
+
+
+
+        // Кольори в стилі хакі для анімації
+        const khakiColors = [
+            '#4B5320', // Темний хакі
+            '#78866B', // Сіро-зелений хакі
+            '#606C38', // Оливковий хакі
+            '#515A3E', // Армійський хакі
+            '#4A5D23', // Лісовий хакі
+            '#6B735F'  // Пустельний хакі
+        ];
+
+        // Анімація для тексту
+        const textAnimation = anime({
+            targets: '.animated-title .letter',
+            color: khakiColors,
+            textShadow: [
+                {value: '2px 2px 4px rgba(0, 0, 0, 0.3)'},
+                {value: '2px 2px 8px rgba(0, 0, 0, 0.5)'},
+                {value: '2px 2px 4px rgba(0, 0, 0, 0.3)'}
+            ],
+            scale: [
+                {value: 1},
+                {value: 1.1},
+                {value: 1}
+            ],
+            rotate: [
+                {value: -3},
+                {value: 3},
+                {value: 0}
+            ],
+            duration: 4000,
+            delay: anime.stagger(100),
+            loop: true,
+            direction: 'alternate',
+            easing: 'easeInOutSine'
+        });
+
+        // Додаткова анімація при наведенні
+        const letters = document.querySelectorAll('.animated-title .letter');
+        letters.forEach(letter => {
+            letter.addEventListener('mouseover', () => {
+                anime({
+                    targets: letter,
+                    scale: 1.4,
+                    rotate: 15,
+                    duration: 300,
+                    color: khakiColors[Math.floor(Math.random() * khakiColors.length)]
+                });
+            });
+
+            letter.addEventListener('mouseout', () => {
+                anime({
+                    targets: letter,
+                    scale: 1,
+                    rotate: 0,
+                    duration: 300
+                });
+            });
+        });

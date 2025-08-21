@@ -40,10 +40,7 @@ body {
 }
 
 /* Додаємо відступ для основного контенту */
-main {
-    margin-top: 80px;
-    padding: 2rem 0;
-}
+
 
 .nav {
     display: flex;
@@ -97,7 +94,7 @@ main {
 /* Hero section */
 .hero {
     position: relative;
-    height: 85vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
@@ -137,9 +134,20 @@ main {
     z-index: 2;
 }
 
-.hero h1 {
+.animated-title {
     font-size: 3rem;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.animated-title .letter {
+    display: inline-block;
+    margin: 0 2px;
+    line-height: 1em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
@@ -566,7 +574,7 @@ main {
 }
 
 .catalog-page {
-    padding: 2rem 0;
+    margin-top: 8%;
 }
 
 .catalog-page .container {
