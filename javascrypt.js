@@ -37,7 +37,7 @@ const allProducts = [
         price: 1499,
         category: "tanks",
         scale: "1-72",
-        image: "images/tank1.jpg"
+        image: "images/catalog/Танк Т-34-85.jpg" // тимчасово використовуємо наявне зображення, замініть при потребі
     },
     {
         id: "4",
@@ -45,7 +45,7 @@ const allProducts = [
         price: 1799,
         category: "tanks",
         scale: "1-32",
-        image: "images/tank2.jpg"
+        image: "images/catalog/Танк Leopard 2.jpeg"
     },
     {
         id: "7",
@@ -53,7 +53,7 @@ const allProducts = [
         price: 2199,
         category: "tanks",
         scale: "1-32",
-        image: "images/tank3.jpg"
+        image: "images/catalog/Танк Abrams M1A2.jpeg"
     },
     {
         id: "8",
@@ -61,7 +61,7 @@ const allProducts = [
         price: 1299,
         category: "tanks",
         scale: "1-72",
-        image: "images/tank4.jpg"
+        image: "images/catalog/Танк Т-34-85.jpg"
     },
 
     // Літаки
@@ -71,7 +71,7 @@ const allProducts = [
         price: 1899,
         category: "aircraft",
         scale: "1-48",
-        image: "images/plane1.jpg"
+        image: "images/catalog/Літак МіГ-29.jpg"
     },
     {
         id: "5",
@@ -79,7 +79,7 @@ const allProducts = [
         price: 2099,
         category: "aircraft",
         scale: "1-48",
-        image: "images/plane2.jpg"
+        image: "images/catalog/Літак F-22 Raptor.webp" // замінити, якщо є F-16 окремо
     },
     {
         id: "9",
@@ -87,7 +87,7 @@ const allProducts = [
         price: 2299,
         category: "aircraft",
         scale: "1-32",
-        image: "images/plane3.jpg"
+        image: "images/catalog/Літак Су-27.jpg"
     },
     {
         id: "10",
@@ -95,7 +95,7 @@ const allProducts = [
         price: 2499,
         category: "aircraft",
         scale: "1-32",
-        image: "images/plane4.jpg"
+        image: "images/catalog/Літак F-22 Raptor.webp"
     },
 
     // Гелікоптери
@@ -105,7 +105,7 @@ const allProducts = [
         price: 1699,
         category: "helicopters",
         scale: "1-72",
-        image: "images/heli1.jpg"
+        image: "images/catalog/Гелікоптер Мі-24.jpg"
     },
     {
         id: "6",
@@ -113,7 +113,7 @@ const allProducts = [
         price: 1999,
         category: "helicopters",
         scale: "1-32",
-        image: "images/heli2.jpg"
+        image: "images/catalog/Гелікоптер Apache.jpg"
     },
     {
         id: "11",
@@ -121,7 +121,7 @@ const allProducts = [
         price: 1899,
         category: "helicopters",
         scale: "1-48",
-        image: "images/heli3.jpg"
+        image: "images/catalog/Гелікоптер Black Hawk.jpg"
     },
     {
         id: "12",
@@ -129,7 +129,7 @@ const allProducts = [
         price: 2099,
         category: "helicopters",
         scale: "1-32",
-        image: "images/heli4.jpg"
+        image: "images/catalog/Гелікоптер Black Hawk.jpg" // тимчасово, замініть при наявності фото Ка-52
     },
 
     // Кораблі
@@ -139,7 +139,7 @@ const allProducts = [
         price: 2699,
         category: "ships",
         scale: "1-32",
-        image: "images/ship1.jpg"
+        image: "images/catalog/Есмінець Type 45.jpg"
     },
     {
         id: "14",
@@ -147,7 +147,7 @@ const allProducts = [
         price: 2999,
         category: "ships",
         scale: "1-32",
-        image: "images/ship2.jpg"
+        image: "images/catalog/Авіаносець USS Nimitz.jpg"
     },
     {
         id: "15",
@@ -155,7 +155,7 @@ const allProducts = [
         price: 2399,
         category: "ships",
         scale: "1-48",
-        image: "images/ship3.jpg"
+        image: "images/catalog/Підводний човен Type 209.png"
     }
 ];
 
@@ -301,6 +301,71 @@ document.addEventListener('click', (e) => {
 
         addToCart(product);
     }
+});
+
+// Відкладена ініціалізація модалей (щоб DOM елементи гарантовано існували)
+document.addEventListener('DOMContentLoaded', function() {
+    const checkoutBtn = document.querySelectorAll('.checkout-btn');
+    const orderModalOverlay = document.getElementById('orderModalOverlay');
+    const thankModalOverlay = document.getElementById('thankModalOverlay');
+    const orderModalClose = document.getElementById('orderModalClose');
+    const orderForm = document.getElementById('orderForm');
+    const orderFormCancel = document.getElementById('orderFormCancel');
+    const thankOk = document.getElementById('thankOk');
+
+    checkoutBtn.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (orderModalOverlay) {
+                orderModalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Закриття модалки
+    function closeOrderModal() {
+        if (orderModalOverlay) orderModalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    orderModalClose && orderModalClose.addEventListener('click', closeOrderModal);
+    orderFormCancel && orderFormCancel.addEventListener('click', closeOrderModal);
+
+    // Обробка відправки форми
+    orderForm && orderForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('customerName').value.trim();
+        const phone = document.getElementById('customerPhone').value.trim();
+
+        if (!name || !phone) {
+            alert('Будь ласка, заповніть всі поля');
+            return;
+        }
+
+        // Очистити корзину
+        cart = [];
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartDisplay();
+        closeOrderModal();
+        if (thankModalOverlay) thankModalOverlay.classList.add('active');
+    });
+
+    thankOk && thankOk.addEventListener('click', function() {
+        if (thankModalOverlay) thankModalOverlay.classList.remove('active');
+    });
+
+    // Clear cart buttons handler
+    const clearCartButtons = document.querySelectorAll('.clear-cart');
+    clearCartButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const confirmed = confirm('Ви дійсно хочете очистити кошик?');
+            if (!confirmed) return;
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+            showNotification('Кошик очищено');
+        });
+    });
 });
 
 // Функція додавання товару в кошик

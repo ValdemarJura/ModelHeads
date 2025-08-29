@@ -42,7 +42,10 @@
             <span>Всього:</span>
             <span id="cartTotal">0 грн</span>
         </div>
-        <button class="checkout-btn">Оформити замовлення</button>
+        <div class="cart-actions">
+            <button class="clear-cart">Очистити кошик</button>
+            <button class="checkout-btn">Оформити замовлення</button>
+        </div>
     </div>
 
     <main>
@@ -294,6 +297,36 @@
     </footer>
 
     <script src="javascrypt.js"></script>
+    <!-- Order Modal -->
+    <div class="modal-overlay" id="orderModalOverlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+            <button class="modal-close" id="orderModalClose" aria-label="Закрити">&times;</button>
+            <h3 id="orderModalTitle">Оформити замовлення</h3>
+            <form id="orderForm" class="order-form">
+                <label>Ім'я
+                    <input type="text" id="customerName" name="name" required>
+                </label>
+                <label>Номер телефону
+                    <input type="tel" id="customerPhone" name="phone" placeholder="+380XXXXXXXXX" required>
+                </label>
+                <div class="modal-actions">
+                    <button type="submit" class="btn primary">Замовити</button>
+                    <button type="button" class="btn" id="orderFormCancel">Скасувати</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Thank you Modal -->
+    <div class="modal-overlay" id="thankModalOverlay" aria-hidden="true">
+        <div class="modal small" role="dialog" aria-modal="true" aria-labelledby="thankModalTitle">
+            <h3 id="thankModalTitle">Дякуємо за замовлення!</h3>
+            <p>Наш менеджер зв'яжеться з вами найближчим часом.</p>
+            <div class="modal-actions">
+                <button type="button" class="btn primary" id="thankOk">Гаразд</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
